@@ -3,144 +3,501 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jonathan A. Gregorio Jr.| E-commerce Virtual Assistant</title>
+<meta name="description" content="Jonathan A. Gregorio Jr. - E-commerce Virtual Assistant | Shopify Product Listing Specialist">
+<meta name="theme-color" content="#2a5298">
+<title>Jonathan A. Gregorio Jr. | E-commerce Virtual Assistant</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Arial, sans-serif;
+    font-family:'Poppins', sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
 }
 
 body{
     line-height:1.6;
     color:#333;
+    background:#f8f9fa;
 }
 
+/* Header Section */
 header{
     background:linear-gradient(135deg,#1e3c72,#2a5298);
     color:white;
     text-align:center;
-    padding:80px 20px;
+    padding:100px 20px;
+    box-shadow:0 4px 15px rgba(0,0,0,0.1);
 }
 
 header h1{
-    font-size:3rem;
+    font-size:3.5rem;
+    font-weight:700;
+    margin-bottom:10px;
+    animation:slideDown 0.6s ease;
 }
 
 header p{
-    margin-top:10px;
-    font-size:1.2rem;
+    font-size:1.3rem;
+    font-weight:300;
+    letter-spacing:0.5px;
+    margin-bottom:30px;
 }
 
+@keyframes slideDown {
+    from {
+        opacity:0;
+        transform:translateY(-20px);
+    }
+    to {
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* Button Styles */
 .btn{
     display:inline-block;
-    margin-top:20px;
-    padding:12px 25px;
+    padding:14px 35px;
     background:#fff;
     color:#2a5298;
     text-decoration:none;
-    border-radius:30px;
-    font-weight:bold;
+    border-radius:50px;
+    font-weight:600;
+    transition:0.3s ease;
+    border:2px solid #fff;
+    cursor:pointer;
+    font-size:1rem;
 }
 
+.btn:hover{
+    background:#2a5298;
+    color:#fff;
+    transform:translateY(-3px);
+    box-shadow:0 5px 20px rgba(0,0,0,0.2);
+}
+
+.btn-secondary{
+    background:#2a5298;
+    color:#fff;
+    border:2px solid #2a5298;
+    margin-top:15px;
+}
+
+.btn-secondary:hover{
+    background:#fff;
+    color:#2a5298;
+}
+
+/* Sections */
 section{
-    padding:70px 10%;
+    padding:80px 10%;
+}
+
+section:nth-child(even){
+    background:#fff;
 }
 
 .section-title{
     text-align:center;
-    margin-bottom:40px;
-    font-size:2rem;
+    margin-bottom:50px;
+    font-size:2.5rem;
+    font-weight:700;
     color:#2a5298;
+    position:relative;
+    padding-bottom:20px;
 }
 
+.section-title::after{
+    content:'';
+    position:absolute;
+    bottom:0;
+    left:50%;
+    transform:translateX(-50%);
+    width:60px;
+    height:4px;
+    background:linear-gradient(90deg,#1e3c72,#2a5298);
+    border-radius:2px;
+}
+
+/* About Section */
 .about{
     text-align:center;
+    max-width:700px;
+    margin:0 auto;
 }
 
+.about p{
+    font-size:1.1rem;
+    line-height:1.8;
+    color:#555;
+}
+
+/* Skills Grid */
 .skills-grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-    gap:20px;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
 }
 
 .skill-card{
-    background:#f4f4f4;
-    padding:20px;
+    background:linear-gradient(135deg,#f5f7fa,#fff);
+    padding:30px;
     text-align:center;
-    border-radius:10px;
-    transition:0.3s;
+    border-radius:12px;
+    transition:0.3s ease;
+    border-left:4px solid #2a5298;
+    box-shadow:0 2px 8px rgba(0,0,0,0.05);
 }
 
 .skill-card:hover{
-    transform:translateY(-5px);
+    transform:translateY(-8px);
+    box-shadow:0 8px 20px rgba(42,82,152,0.15);
+    border-left-color:#1e3c72;
 }
 
+.skill-card h3{
+    color:#2a5298;
+    font-size:1.2rem;
+    font-weight:600;
+}
+
+/* Portfolio Grid */
 .portfolio-grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:20px;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:30px;
 }
 
 .portfolio-item{
-    background:#f9f9f9;
-    border-radius:10px;
+    background:#fff;
+    border-radius:12px;
     overflow:hidden;
-    box-shadow:0 2px 10px rgba(0,0,0,.1);
+    box-shadow:0 4px 15px rgba(0,0,0,0.08);
+    transition:0.3s ease;
+    cursor:pointer;
+}
+
+.portfolio-item:hover{
+    transform:translateY(-10px);
+    box-shadow:0 12px 30px rgba(0,0,0,0.15);
+}
+
+.portfolio-item-image{
+    position:relative;
+    width:100%;
+    height:220px;
+    overflow:hidden;
+    background:#e0e0e0;
 }
 
 .portfolio-item img{
     width:100%;
-    height:200px;
+    height:100%;
     object-fit:cover;
+    transition:0.3s ease;
+}
+
+.portfolio-item:hover img{
+    transform:scale(1.05);
+}
+
+.portfolio-overlay{
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background:rgba(42,82,152,0.7);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    opacity:0;
+    transition:0.3s ease;
+}
+
+.portfolio-item:hover .portfolio-overlay{
+    opacity:1;
+}
+
+.portfolio-overlay-text{
+    color:#fff;
+    text-align:center;
+    font-weight:600;
+    font-size:1.1rem;
 }
 
 .portfolio-content{
-    padding:15px;
+    padding:25px;
 }
 
+.portfolio-content h3{
+    color:#2a5298;
+    font-size:1.3rem;
+    margin-bottom:10px;
+    font-weight:600;
+}
+
+.portfolio-content p{
+    color:#666;
+    font-size:0.95rem;
+    line-height:1.6;
+}
+
+/* Experience Section */
 .experience{
-    background:#f4f8ff;
+    background:linear-gradient(135deg,#f0f4ff,#f8f9fa);
 }
 
 .timeline{
-    max-width:800px;
+    max-width:900px;
     margin:auto;
+    position:relative;
+}
+
+.timeline::before{
+    content:'';
+    position:absolute;
+    left:50%;
+    transform:translateX(-50%);
+    width:2px;
+    height:100%;
+    background:#2a5298;
 }
 
 .timeline-item{
-    background:white;
-    margin-bottom:20px;
-    padding:20px;
-    border-left:5px solid #2a5298;
-    border-radius:8px;
+    background:#fff;
+    margin-bottom:40px;
+    padding:30px;
+    border-radius:12px;
+    box-shadow:0 4px 15px rgba(0,0,0,0.08);
+    position:relative;
+    transition:0.3s ease;
 }
 
+.timeline-item:hover{
+    box-shadow:0 8px 25px rgba(0,0,0,0.12);
+}
+
+.timeline-item::before{
+    content:'';
+    position:absolute;
+    left:-15px;
+    top:40px;
+    width:30px;
+    height:30px;
+    background:#2a5298;
+    border:4px solid #f8f9fa;
+    border-radius:50%;
+}
+
+.timeline-item h3{
+    color:#2a5298;
+    font-size:1.4rem;
+    margin-bottom:10px;
+    font-weight:600;
+}
+
+.timeline-item strong{
+    color:#1e3c72;
+    font-size:1.1rem;
+}
+
+.timeline-item ul{
+    margin-left:20px;
+    margin-top:15px;
+}
+
+.timeline-item li{
+    margin-bottom:10px;
+    color:#555;
+    line-height:1.7;
+}
+
+@media(max-width:768px){
+    .timeline::before{
+        left:0;
+    }
+
+    .timeline-item{
+        margin-left:30px;
+    }
+
+    .timeline-item::before{
+        left:-34px;
+    }
+}
+
+/* Contact Section */
 .contact{
     text-align:center;
+}
+
+.contact-info{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+    margin:40px 0;
+    max-width:900px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.contact-card{
+    background:#fff;
+    padding:30px;
+    border-radius:12px;
+    box-shadow:0 4px 15px rgba(0,0,0,0.08);
+    transition:0.3s ease;
+}
+
+.contact-card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 8px 20px rgba(0,0,0,0.12);
+}
+
+.contact-card i{
+    font-size:2.5rem;
+    color:#2a5298;
+    margin-bottom:15px;
+}
+
+.contact-card h3{
+    color:#2a5298;
+    font-size:1.2rem;
+    margin-bottom:10px;
+}
+
+.contact-card p{
+    color:#666;
+    word-break:break-word;
 }
 
 .contact a{
     color:#2a5298;
     text-decoration:none;
+    font-weight:500;
+    transition:0.3s ease;
 }
 
+.contact a:hover{
+    text-decoration:underline;
+    color:#1e3c72;
+}
+
+.cta-section{
+    margin-top:40px;
+}
+
+/* Footer */
 footer{
-    background:#222;
-    color:white;
+    background:#1a1a1a;
+    color:#fff;
     text-align:center;
-    padding:20px;
+    padding:30px 20px;
+    font-size:0.95rem;
+}
+
+footer p{
+    margin:0;
+    letter-spacing:0.5px;
+}
+
+/* Responsive Design */
+@media(max-width:968px){
+    section{
+        padding:60px 8%;
+    }
+
+    header h1{
+        font-size:2.5rem;
+    }
+
+    header p{
+        font-size:1.1rem;
+    }
+
+    .section-title{
+        font-size:2rem;
+    }
+
+    .skills-grid{
+        grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+        gap:15px;
+    }
+
+    .portfolio-grid{
+        grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    }
 }
 
 @media(max-width:768px){
+    section{
+        padding:50px 5%;
+    }
+
+    header{
+        padding:60px 15px;
+    }
+
     header h1{
         font-size:2rem;
     }
 
+    header p{
+        font-size:1rem;
+    }
+
     .section-title{
+        font-size:1.8rem;
+    }
+
+    .btn{
+        padding:12px 30px;
+        font-size:0.95rem;
+    }
+
+    .skills-grid{
+        grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+    }
+
+    .portfolio-grid{
+        grid-template-columns:1fr;
+    }
+
+    .contact-info{
+        grid-template-columns:1fr;
+    }
+}
+
+@media(max-width:480px){
+    header h1{
         font-size:1.6rem;
+    }
+
+    header p{
+        font-size:0.9rem;
+    }
+
+    section{
+        padding:40px 4%;
+    }
+
+    .section-title{
+        font-size:1.5rem;
+    }
+
+    .btn{
+        padding:10px 25px;
+        font-size:0.9rem;
     }
 }
 </style>
@@ -151,132 +508,141 @@ footer{
 <header>
     <h1>Jonathan A. Gregorio Jr.</h1>
     <p>E-commerce Virtual Assistant | Shopify Product Listing Specialist</p>
-
-    <a href="#contact" class="btn">Hire Me</a>
+    <a href="#contact" class="btn">Get In Touch</a>
 </header>
 
 <section id="about">
     <h2 class="section-title">About Me</h2>
-
     <div class="about">
         <p>
-            I am an aspiring E-commerce Virtual Assistant with experience in
-            inventory management, data entry, administrative support, and
-            product organization. I help businesses manage product listings,
-            inventory updates, and online store operations efficiently.
+            I am a dedicated E-commerce Virtual Assistant with hands-on experience in inventory management, 
+            data entry, administrative support, and product organization. I specialize in helping businesses 
+            streamline their online operations through efficient product listing management, accurate inventory tracking, 
+            and seamless store operations. My goal is to empower e-commerce businesses to scale effectively by handling 
+            the operational details that matter.
         </p>
     </div>
 </section>
 
 <section id="skills">
     <h2 class="section-title">My Skills</h2>
-
     <div class="skills-grid">
-
         <div class="skill-card">
-            <h3>Shopify Product Listing</h3>
+            <h3>🛒 Shopify Product Listing</h3>
         </div>
-
         <div class="skill-card">
-            <h3>Inventory Management</h3>
+            <h3>📦 Inventory Management</h3>
         </div>
-
         <div class="skill-card">
-            <h3>Data Entry</h3>
+            <h3>💾 Data Entry</h3>
         </div>
-
         <div class="skill-card">
-            <h3>Microsoft Excel</h3>
+            <h3>📊 Microsoft Excel</h3>
         </div>
-
         <div class="skill-card">
-            <h3>Google Sheets</h3>
+            <h3>📈 Google Sheets</h3>
         </div>
-
         <div class="skill-card">
-            <h3>Canva Design</h3>
+            <h3>🎨 Canva Design</h3>
         </div>
-
         <div class="skill-card">
-            <h3>Customer Support</h3>
+            <h3>💬 Customer Support</h3>
         </div>
-
         <div class="skill-card">
-            <h3>Product Research</h3>
+            <h3>🔍 Product Research</h3>
         </div>
-
     </div>
 </section>
 
 <section id="portfolio">
     <h2 class="section-title">Portfolio Samples</h2>
-
     <div class="portfolio-grid">
-
         <div class="portfolio-item">
-            <img src="https://via.placeholder.com/600x400" alt="">
+            <div class="portfolio-item-image">
+                <img src="https://images.unsplash.com/photo-1460925895917-adf4198c838d?w=600&h=400&fit=crop" alt="Shopify Product Listing Dashboard">
+                <div class="portfolio-overlay">
+                    <div class="portfolio-overlay-text">Shopify Management</div>
+                </div>
+            </div>
             <div class="portfolio-content">
                 <h3>Shopify Product Listing</h3>
-                <p>Sample product uploads with optimized descriptions and tags.</p>
+                <p>Professional product uploads with optimized descriptions, tags, and SEO elements for maximum visibility and conversions.</p>
             </div>
         </div>
 
         <div class="portfolio-item">
-            <img src="https://via.placeholder.com/600x400" alt="">
+            <div class="portfolio-item-image">
+                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop" alt="Inventory Tracking Sheet">
+                <div class="portfolio-overlay">
+                    <div class="portfolio-overlay-text">Inventory Tracking</div>
+                </div>
+            </div>
             <div class="portfolio-content">
                 <h3>Inventory Tracking Sheet</h3>
-                <p>Stock monitoring using Excel and Google Sheets.</p>
+                <p>Comprehensive stock monitoring systems using Excel and Google Sheets with automated updates and real-time reporting.</p>
             </div>
         </div>
 
         <div class="portfolio-item">
-            <img src="https://via.placeholder.com/600x400" alt="">
+            <div class="portfolio-item-image">
+                <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&h=400&fit=crop" alt="Canva Product Graphics">
+                <div class="portfolio-overlay">
+                    <div class="portfolio-overlay-text">Design & Graphics</div>
+                </div>
+            </div>
             <div class="portfolio-content">
                 <h3>Canva Product Graphics</h3>
-                <p>Product banners and social media promotional materials.</p>
+                <p>Eye-catching product banners and social media promotional materials designed to increase engagement and brand awareness.</p>
             </div>
         </div>
-
     </div>
 </section>
 
 <section id="experience" class="experience">
     <h2 class="section-title">Experience</h2>
-
     <div class="timeline">
-
         <div class="timeline-item">
             <h3>Inventory Assistant (OJT)</h3>
             <p><strong>RSV Sun Trade Corporation</strong></p>
             <br>
             <ul>
-                <li>Managed inventory records.</li>
-                <li>Monitored stock availability.</li>
-                <li>Performed data entry tasks.</li>
-                <li>Generated inventory reports.</li>
-                <li>Assisted warehouse operations.</li>
+                <li>✓ Managed comprehensive inventory records and databases</li>
+                <li>✓ Monitored stock availability and flagged low inventory levels</li>
+                <li>✓ Performed accurate data entry and verification tasks</li>
+                <li>✓ Generated detailed inventory reports for management review</li>
+                <li>✓ Assisted warehouse operations and logistics coordination</li>
             </ul>
         </div>
-
     </div>
 </section>
 
 <section id="contact" class="contact">
     <h2 class="section-title">Contact Me</h2>
+    
+    <div class="contact-info">
+        <div class="contact-card">
+            <h3>📧 Email</h3>
+            <p><a href="mailto:gregoriojonathan022@gmail.com">gregoriojonathan022@gmail.com</a></p>
+        </div>
+        <div class="contact-card">
+            <h3>📱 Phone</h3>
+            <p><a href="tel:+639916732525">+63 991 673 2525</a></p>
+        </div>
+        <div class="contact-card">
+            <h3>💼 LinkedIn</h3>
+            <p><a href="https://linkedin.com/in/yourprofile" target="_blank">linkedin.com/in/yourprofile</a></p>
+        </div>
+    </div>
 
-    <p>Email: gregoriojonathan022@gmail.com</p>
-    <p>Phone: +63 991 673 2525</p>
-    <p>LinkedIn: linkedin.com/in/yourprofile</p>
-
-    <br>
-
-    <a href="mailto:your.email@gmail.com" class="btn">
-        Send Email
-    </a>
+    <div class="cta-section">
+        <a href="mailto:gregoriojonathan022@gmail.com" class="btn btn-secondary">
+            Send Me an Email
+        </a>
+    </div>
 </section>
 
 <footer>
-    <p>© 2026 Jonathan A. Gregorio Jr. | E-commerce Virtual Assistant</p>
+    <p>© 2026 Jonathan A. Gregorio Jr. | E-commerce Virtual Assistant | All Rights Reserved</p>
 </footer>
 
 </body>
